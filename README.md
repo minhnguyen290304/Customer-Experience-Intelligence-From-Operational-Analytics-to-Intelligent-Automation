@@ -17,7 +17,6 @@ This project presents an end-to-end Customer Experience Operations Intelligence 
 
 Starting from raw customer support data, the project performs data preparation, business-hour SLA calculation, operational KPI generation, interactive dashboard development, customer feedback analysis using Natural Language Processing (NLP), and finally an AI-assisted automation workflow capable of generating executive Morning Brief reports and Critical Alerts for daily operational monitoring.
 
-Rather than building a traditional dashboard alone, this project demonstrates how analytics can evolve into an intelligent decision-support system by integrating structured operational metrics, unstructured customer feedback, and Large Language Models (LLMs) into a single automated workflow.
 
 #### The project consists of 10 main parts:
 
@@ -61,7 +60,7 @@ Specifically, the project aims to:
 - Discover recurring customer concerns through Customer Voice Analytics using Topic Modeling.
 - Design an AI-powered automation workflow capable of automatically generating executive operational reports and critical incident alerts.
 
-Ultimately, the project demonstrates how organizations can move beyond descriptive reporting by combining operational analytics and artificial intelligence to support faster, more informed managerial decisions.
+Ultimately, the project demonstrates how organizations can move beyond descriptive reporting by combining operational analytics and artificial intelligence to support faster, re informed managerial decisions.
 
 ---
 
@@ -109,34 +108,34 @@ The `Data_Suggestion` dataset contains customer feedback collected after service
 
 # 3. Project Architecture
 
-The project consists of two analytical pipelines that eventually converge into a single AI-powered decision support workflow.
+The project consists of two analytical pipelines that eventually converge into a unified AI-powered operational reporting workflow.
 
-The first pipeline focuses on structured operational analytics. Ticket records and SLA logs are processed, validated, and transformed into operational KPIs before being visualized through interactive dashboards.
+The first pipeline focuses on structured operational analytics. Customer support ticket records and SLA logs are first processed and integrated using **SQL Server**, where data validation, business-hour SLA calculation, and feature engineering are performed to generate operational KPIs. These metrics are then visualized through interactive **Power BI** dashboards, enabling managers to monitor ticket volume, SLA compliance, agent performance, and service-level performance.
 
-The second pipeline focuses on unstructured customer feedback. Customer comments are processed using Natural Language Processing techniques to identify recurring discussion themes and customer concerns.
+The second pipeline focuses on unstructured customer feedback. Customer comments are processed in Python using **Natural Language Processing (NLP)** techniques, including text preprocessing, CountVectorizer, and **Latent Dirichlet Allocation (LDA)** topic modeling, to identify recurring discussion themes and transform customer feedback into actionable business insights.
 
-Finally, insights generated from both analytical pipelines are integrated into an AI-powered automation workflow that continuously monitors operational performance and automatically generates executive reports.
+Finally, insights generated from both analytical pipelines are integrated into an automated workflow developed in **n8n**. The workflow combines operational KPIs, anomaly detection results, and customer voice insights before leveraging the **OpenAI API** to generate AI-powered Morning Briefs and Critical Alerts, which are automatically delivered to management via **Gmail**.
 
 ```text
-                    Data_Ticket
-                         │
-                    Data_SLA
-                         │
-                  Data Integration
-                         │
-                Business Hour SLA
-                         │
-                  Operational KPIs
-                         │
-                  Power BI Dashboard
-                         │
-                         ├──────────────────────┐
-                         │                      │
-Data_Suggestion          │                      │
-        │                │                      │
-        ▼                ▼                      ▼
- NLP Processing     Operational Insights   Customer Insights
-        └────────────────┬─────────────────────┘
+                                      Data_Ticket
+                                           │
+                                      Data_SLA
+                                           │
+                                    Data Integration
+                                           │
+                                  Business Hour SLA
+                                           │
+                                    Operational KPIs
+                                           │
+                                    Power BI Dashboard
+                                           │
+Data_Suggestion                            │
+        │                                  │                      
+NLP Processing                             │                      
+        │                                  │                     
+        ▼                                  ▼                     
+Customer Insights               Operational Insights   
+        └──────────────────────────────────┘
                          │
               AI CX Operations Automation
                          │
@@ -145,116 +144,107 @@ Data_Suggestion          │                      │
  Morning Brief                  Critical Alert
 ```
 
-###Technology Stack
+### 🛠️ Tools Used
 
-| Category | Technologies |
-|----------|--------------|
-| Data Processing | SQL Server, SQL |
-| Visualization | Power BI |
-| NLP | Python, Pandas, Scikit-learn, CountVectorizer, LDA |
-| Automation | n8n |
-| AI | OpenAI API |
-| Storage | Google Sheets |
-
+| Technology | Purpose | Key Deliverables |
+|------------|---------|------------------|
+| <img src="https://img.shields.io/badge/Microsoft_SQL_Server-CC2927?style=flat-square&logo=microsoftsqlserver&logoColor=white"> | Data Engineering | Data validation, ETL, business-hour SLA calculation, feature engineering, KPI generation |
+| <img src="https://img.shields.io/badge/Power_BI-F2C811?style=flat-square&logo=powerbi&logoColor=black"> | Business Intelligence | Executive dashboard, agent performance analysis, service performance analysis |
+| <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white"> | Customer Voice Analytics | Text preprocessing, CountVectorizer, LDA Topic Modeling, customer insight extraction |
+| <img src="https://img.shields.io/badge/n8n-EA4B71?style=flat-square&logo=n8n&logoColor=white"> | Workflow Automation | Automated data pipeline, KPI aggregation, anomaly detection, AI orchestration |
+| <img src="https://img.shields.io/badge/OpenAI_API-412991?style=flat-square&logo=openai&logoColor=white"> | AI Integration | Morning Brief generation, Critical Alert generation, executive reporting |
 
 ---
 
-# 4. Data Engineering
-
-The project begins by transforming raw operational data into a standardized analytical dataset suitable for business reporting and AI automation.
-
-Ticket records and SLA logs are first validated to ensure primary key consistency, eliminate duplicate records, and identify missing values before being merged through Ticket ID.
-
-A key challenge addressed during this stage is the calculation of Actual SLA. Instead of using simple timestamp differences, the project calculates Actual SLA exclusively during business working hours (Monday–Friday, 09:00–18:00), excluding weekends and non-working periods. This approach provides a significantly more accurate measurement of operational efficiency compared to conventional elapsed-time calculations.
-
-Additional business features, including Delay Minutes, SLA Status, Reporting Date, Weekly Aggregation, and operational indicators, are subsequently generated to support dashboard reporting, anomaly detection, and AI-driven reporting.
-
-The resulting analytical dataset serves as the single source of truth for every downstream component of the project.
-
----
 
 # 5. Operational Performance Analytics
 
-The operational analytics layer transforms processed ticket and SLA data into interactive dashboards that enable managers to monitor customer support performance from multiple business perspectives. Rather than presenting isolated KPIs, the dashboards are designed to identify operational trends, workload distribution, service quality, and potential performance bottlenecks.
+The operational analytics layer transforms processed Ticket and SLA data into interactive Power BI dashboards that provide a comprehensive view of customer support performance. Rather than presenting isolated KPIs, the dashboards help managers monitor operational workload, SLA compliance, agent productivity, and service-level performance, enabling faster identification of operational bottlenecks and improvement opportunities.
 
-The analytical solution consists of three dashboard pages, each focusing on a different operational dimension while collectively providing a comprehensive view of Customer Experience performance.
+The analytical solution consists of three dashboard pages, each focusing on a different operational perspective while collectively providing a complete view of Customer Experience operations.
 
 ## 5.1. CX Operations Overview
 
-(Dashboard Preview)
+<img src="https://github.com/minhnguyen290304/Customer-Experience-Intelligence-From-Operational-Analytics-to-Intelligent-Automation/blob/main/dashboard%20preview/Ticket%20and%20SLA%20Performance%20Overview.png?raw=true" width="100%">
 
-The Executive Dashboard provides a high-level overview of operational performance by consolidating ticket volume, SLA compliance, workload trends, and handling efficiency into a single reporting interface.
+The Executive Dashboard consolidates key operational metrics into a single reporting interface, allowing managers to monitor ticket demand, SLA performance, workload trends, and handling efficiency.
 
-The analysis shows that a total of **5,187 customer** support tickets were processed during the reporting period, averaging approximately **371 tickets per week**. Ticket demand increased steadily throughout the quarter, reaching its highest level during Week 12 before declining sharply toward the end of the reporting period.
+During the analysis period, a total of **5,187 customer support tickets** were processed, averaging **371 tickets per week**. Ticket demand fluctuated throughout the quarter, peaking at **565 tickets in Week 12** before dropping sharply to **111 tickets in Week 14**, indicating significant variations in customer support demand over time.
 
-Despite the increasing workload, service performance did not improve accordingly. The overall SLA On-Time Rate reached only **41.85%**, indicating that fewer than half of all tickets were resolved within the committed service target. Weekly SLA performance gradually deteriorated after Week 3, eventually falling to only **25.23%** by Week 14. This divergence between ticket growth and SLA compliance suggests that operational capacity did not scale proportionally with customer demand, leading to increasing service pressure over time.
+Although ticket volume increased steadily toward the end of the reporting period, operational performance did not improve accordingly. The overall **SLA On-Time Rate was only 41.85%**, meaning fewer than half of all tickets were resolved within the committed SLA. Weekly SLA performance reached its highest level of **58.02% in Week 3** before declining continuously to **25.23% in Week 14**, suggesting that operational capacity did not scale sufficiently with the growing workload.
 
-The distribution of Actual SLA further reveals that although most tickets were resolved within a relatively short period, a small number of exceptionally long-running cases significantly impacted overall operational performance. These outliers may indicate backlog accumulation, ticket complexity, or escalation processes requiring further operational investigation.
-
+The distribution of Actual SLA is highly skewed. While most tickets were resolved within a relatively short timeframe, a small number of exceptionally long-running cases significantly increased the average handling time, indicating potential backlog accumulation, ticket escalation, or process bottlenecks requiring further operational investigation.
 
 ## 5.2. Agent Performance Analysis
 
-(Dashboard Preview)
+<img src="https://github.com/minhnguyen290304/Customer-Experience-Intelligence-From-Operational-Analytics-to-Intelligent-Automation/blob/main/dashboard%20preview/Agent%20Performance.png?raw=true" width="100%">
 
-The Agent Performance dashboard evaluates operational workload and service quality at the individual agent level. By combining ticket volume, SLA compliance, and handling efficiency, the dashboard enables managers to identify both top-performing agents and potential operational bottlenecks.
+The Agent Performance dashboard evaluates individual performance by combining ticket workload, SLA compliance, and average handling time, enabling managers to identify both high-performing agents and operational risks.
 
-The analysis reveals that ticket workload was distributed unevenly across the support team. One agent handled **1,913 tickets**, accounting for approximately **37% of all customer requests**, while the average workload per agent remained substantially lower. Such concentration increases operational dependency on a limited number of individuals and creates potential service continuity risks.
+The analysis reveals a highly uneven workload distribution across the support team. **ngan.pham1** handled **1,913 tickets**, representing approximately **37% of all customer requests**, while the average workload per agent was only **472 tickets**. Such concentration creates operational dependency on a limited number of agents and increases service continuity risk.
 
-Performance comparison further indicates considerable variation in SLA compliance across agents. While the highest-performing agent achieved an SLA On-Time Rate exceeding **87%**, several agents recorded substantially lower performance despite managing fewer tickets. This suggests that ticket volume alone does not fully explain operational efficiency. Differences in ticket complexity, workload allocation, and handling practices likely contribute to these performance gaps.
+Performance comparison also highlights significant differences in service quality. **crm_users** achieved the highest **SLA On-Time Rate of 87.39%** while recording the fastest average handling time (**272 minutes**). In contrast, **thuy.nguyen5** achieved only **19.23% SLA compliance**, resulting in a performance gap of more than **68 percentage points** between the highest- and lowest-performing agents.
 
-Average handling time analysis also highlights several agents with exceptionally high Actual SLA values, suggesting prolonged ticket resolution, backlog accumulation, or operational inefficiencies that warrant further investigation.
+Interestingly, workload alone does not fully explain operational performance. Despite handling the largest number of tickets, **ngan.pham1** maintained an SLA On-Time Rate close to the overall average (approximately **42%**), suggesting that factors such as ticket complexity, workload allocation, and operational practices have a greater influence on service quality than ticket volume alone.
 
+Several agents also recorded exceptionally high average Actual SLA values exceeding **15,000 minutes**, indicating potential backlog accumulation, complex cases, or operational inefficiencies that warrant further investigation.
 
 ## 5.3. Service Performance Analysis
 
-(Dashboard Preview)
+<img src="https://github.com/minhnguyen290304/Customer-Experience-Intelligence-From-Operational-Analytics-to-Intelligent-Automation/blob/main/dashboard%20preview/Product%20Service%20Analysis.png?raw=true" width="100%">
 
-The Service Performance dashboard evaluates operational performance across different product and service categories, allowing management to identify which business areas contribute most significantly to SLA deterioration.
+The Service Performance dashboard evaluates operational performance across product and service categories, allowing management to identify which business areas contribute most significantly to SLA deterioration.
 
-The analysis demonstrates substantial differences in service quality between product groups. Several services consistently maintained strong SLA compliance throughout the reporting period, whereas others experienced persistently poor operational performance. Rather than indicating organization-wide service issues, the findings suggest that SLA challenges are concentrated within a relatively small number of high-impact service categories.
+Service quality varies considerably across product groups, with SLA On-Time Rates ranging from **100% to 0%**. High-performing services include **Online Television (100%)**, **Public Services (91.09%)**, and **Utility Telecommunications (87.88%)**, all of which consistently maintained strong SLA compliance throughout the reporting period.
 
-The service-level heatmap further illustrates that while certain categories repeatedly achieved SLA compliance above 90%, high-volume services such as Mobile Top-up and Mobile Card Purchase experienced continuous SLA deterioration across multiple weeks. These findings suggest that targeted operational improvements within specific services may deliver greater business impact than broad organization-wide initiatives.
+Conversely, several services demonstrated critically poor performance. **Features**, **Apartment Services**, and **Transfer to MoMo Wallet** all recorded **0% SLA compliance**, meaning none of their tickets were resolved within the committed SLA target.
 
+From a workload perspective, customer demand is heavily concentrated in only a few services. **Mobile Card Purchase (1,603 tickets)** and **Mobile Top-up (887 tickets)** account for a substantial proportion of total ticket volume while maintaining relatively poor SLA performance (**37.37%** and **21.65%**, respectively). This combination of high workload and low SLA compliance makes these services priority candidates for operational improvement.
+
+Delay severity analysis further shows that **Transfer & Receive Money** recorded the highest average delay time (approximately **17.9K minutes**), followed by **Features (13.2K minutes)** and **Utility Telecommunications (11.1K minutes)**, indicating prolonged ticket resolution within specific service categories.
+
+Finally, the Service × Week performance matrix reveals that SLA compliance fluctuates considerably across weeks for several services. These findings suggest that operational issues are influenced not only by service type but also by changing workload patterns and resource availability over time, highlighting opportunities for targeted operational improvements rather than organization-wide process changes.
 
 ---
 
 # 6. Customer Voice Analytics
 
-Operational metrics explain how customer support operations perform, but they cannot fully explain why customers remain satisfied or dissatisfied. To complement structured operational analytics, this project incorporates Customer Voice Analytics to identify recurring customer concerns directly from customer feedback.
+While operational dashboards reveal **how** customer support performs, they cannot fully explain **why** customers remain satisfied or dissatisfied. To complement structured operational metrics, this project incorporates Customer Voice Analytics to analyze unstructured customer feedback and uncover recurring customer concerns at scale.
 
-Rather than manually reviewing hundreds of comments, Natural Language Processing (NLP) techniques are applied to automatically discover discussion themes and transform unstructured customer feedback into actionable business insights.
+The `Data_Suggestion` dataset consists of open-ended customer comments collected from users. Because manually reviewing thousands of comments is both time-consuming and difficult to scale, Natural Language Processing (NLP) and Topic Modeling were applied to automatically identify the dominant discussion themes and transform customer feedback into actionable business insights.
 
-** NLP Workflow:
+**NLP Workflow**:
 
-(Workflow Figure)
+The Customer Voice Analytics pipeline begins by cleaning and standardizing raw customer comments. After text normalization, tokenization, and stopword removal, customer comments are transformed into a document-term matrix using **CountVectorizer**. Multiple **Latent Dirichlet Allocation (LDA)** models are then evaluated using the **Topic Coherence Score** to determine the most appropriate number of topics before each topic is interpreted from a business perspective. Finally, each topic is manually interpreted into business-oriented customer issues that can be more easily understood by operational managers.
 
-The Customer Voice Analytics pipeline begins by preprocessing raw customer comments through text cleaning and normalization to improve data consistency. Stopwords and unnecessary symbols are subsequently removed before customer comments are transformed into a document-term matrix using CountVectorizer.
+<img src="https://github.com/minhnguyen290304/Customer-Experience-Intelligence-From-Operational-Analytics-to-Intelligent-Automation/blob/main/workflows/NLP%20Workflow.png?raw=true" width="100%">
 
-Latent Dirichlet Allocation (LDA) is then applied to identify latent discussion topics across the feedback dataset. Finally, each topic is manually interpreted into business-oriented customer issues that can be more easily understood by operational managers.
+To determine the optimal number of discussion topics, multiple LDA models were evaluated using the **Topic Coherence Score**. The final model was configured with **six topics**, providing clearer topic separation and better business interpretability while maintaining strong semantic coherence.
 
-```text
-Customer Feedback
-        ↓
-Text Cleaning
-        ↓
-Normalization
-        ↓
-CountVectorizer
-        ↓
-LDA Topic Modeling
-        ↓
-Topic Interpretation
-        ↓
-Business Insights
-```
+The six identified customer discussion themes are presented below.
 
-** Customer Voice Insights
+**Topic Distribution**
 
-The topic modeling results reveal several recurring themes consistently discussed by customers, including loan services, promotional programs, payment experience, account-related services, and application usability.
+| No. | Topic | Representative Keywords | Share | Business Insight |
+|----:|-------|-------------------------|------:|------------------|
+| 1 | Rewards & Gamification | xu, voucher, ưu_đãi, nhiệm_vụ, trò_chơi, game | 21.1% | Customers expect richer loyalty programs, cashback campaigns, vouchers, and more engaging gamification features. |
+| 2 | Loan & Credit Services | vay, hạn_mức, lãi, thanh_toán, trả | 20.3% | Users request higher credit limits, faster approvals, clearer repayment information, and more flexible lending services. |
+| 3 | Wallet Account & Financial Management | tài_khoản, giao_dịch, thanh_toán, ngân_hàng | 19.1% | Customers seek improved account management, transaction visibility, and smoother financial operations. |
+| 4 | Debt Collection & Payment Reminder Experience | gọi, nhắc, nợ, hạn, nhân_viên | 17.0% | Customers expect more personalized and customer-friendly reminder communications. |
+| 5 | Payment & Bank Integration Experience | ví, chuyển, ngân_hàng, liên_kết, thông_báo | 14.6% | Users seek a more seamless payment experience with reliable bank integration and transaction notifications. |
+| 6 | App UI/UX & Feature Enhancement | app, giao_diện, dark_mode, lag, tính_năng | 7.9% | Customers request interface improvements, better performance, and enhanced application usability. |
 
-Unlike operational dashboards, which primarily monitor service efficiency, Customer Voice Analytics provides additional context regarding customer expectations and pain points. These qualitative insights complement structured KPIs by highlighting customer concerns that may not yet be reflected through operational metrics alone.
 
-Together, structured operational data and unstructured customer feedback provide a more comprehensive understanding of Customer Experience performance, enabling managers to prioritize service improvements from both operational and customer perspectives.
+
+<img src="https://github.com/minhnguyen290304/Customer-Experience-Intelligence-From-Operational-Analytics-to-Intelligent-Automation/blob/main/dashboard%20preview/TopicDistribution.png?raw=true" width="100%">
+
+
+
+The topic modeling results reveal that customer feedback extends far beyond issue resolution. **Rewards & Gamification (21.1%)** and **Loan & Credit Services (20.3%)** together account for over **41%** of all suggestions, indicating strong customer demand for continuous product innovation and service enhancement.
+
+Beyond product features, customers also emphasize the overall service experience. Topics related to **Debt Collection**, **Payment & Bank Integration**, and **Wallet Management** highlight expectations for smoother financial transactions, transparent communication, and more personalized customer interactions. Although **App UI/UX & Feature Enhancement** represents the smallest topic (7.9%), it reflects growing expectations for a modern, responsive, and intuitive mobile application.
+
+Together with the operational dashboards, Customer Voice Analytics provides a more comprehensive understanding of Customer Experience by combining structured operational metrics with unstructured customer feedback, enabling managers to prioritize improvements from both operational and customer perspectives.
 
 
 ---
@@ -267,7 +257,7 @@ The automation workflow was implemented using n8n, integrating operational KPIs,
 
 ** Workflow Architecture:
 
-(Workflow Screenshot)
+<img src="https://github.com/minhnguyen290304/Customer-Experience-Intelligence-From-Operational-Analytics-to-Intelligent-Automation/blob/main/workflows/Automation%20Workflow.png?raw=true" width="100%">
 
 ```text
 Schedule Trigger
@@ -410,7 +400,7 @@ Integrate the solution with enterprise CRM, Customer Data Platform (CDP), ticket
 
 ## 📫 Connect With Me
 
-- LinkedIn: https://www.linkedin.com/in/minh-nguyen-9016a627a/
+- LinkedIn: https://www.linkedin.com/in/minhnguyen293/
 - Email: minhnguyen29p304@gmail.com
 
 ---
