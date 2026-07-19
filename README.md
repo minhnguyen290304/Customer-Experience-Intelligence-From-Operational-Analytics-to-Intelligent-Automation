@@ -236,11 +236,11 @@ The six identified customer discussion themes are presented below.
 
 ###
 
-<img src="https://github.com/minhnguyen290304/Customer-Experience-Intelligence-From-Operational-Analytics-to-Intelligent-Automation/blob/main/dashboard%20preview/TopicDistribution.png?raw=true" width="100%">
+<img src="https://github.com/minhnguyen290304/Customer-Experience-Intelligence-From-Operational-Analytics-to-Intelligent-Automation/blob/main/visuals/TopicDistribution.png?raw=true" width="100%">
 
 ###
 
-<img src="https://github.com/minhnguyen290304/Customer-Experience-Intelligence-From-Operational-Analytics-to-Intelligent-Automation/blob/main/dashboard%20preview/Word%20Cloud.png?raw=true" width="100%">
+<img src="https://github.com/minhnguyen290304/Customer-Experience-Intelligence-From-Operational-Analytics-to-Intelligent-Automation/blob/main/visuals/Word%20Cloud.png?raw=true" width="100%">
 
 
 The topic modeling results reveal that customer feedback extends far beyond issue resolution. **Rewards & Gamification (21.1%)** and **Loan & Credit Services (20.3%)** together account for over **41%** of all suggestions, indicating strong customer demand for continuous product innovation and service enhancement.
@@ -283,7 +283,7 @@ The workflow automatically generates two AI-powered reports designed for differe
 
 #### Morning Brief
 
-<img src="https://github.com/minhnguyen290304/Customer-Experience-Intelligence-From-Operational-Analytics-to-Intelligent-Automation/blob/main/dashboard%20preview/Morning%20Brief%20Mail.png?raw=true" width="100%">
+<img src="https://github.com/minhnguyen290304/Customer-Experience-Intelligence-From-Operational-Analytics-to-Intelligent-Automation/blob/main/visuals/Morning%20Brief%20Mail.png?raw=true" width="100%">
 
 The Morning Brief is generated on a scheduled basis and provides management with a concise overview of daily operational performance. In addition to the executive summary shown above, the complete report includes:
 
@@ -297,7 +297,7 @@ The Morning Brief is generated on a scheduled basis and provides management with
 
 #### Critical Alert
 
-<img src="https://github.com/minhnguyen290304/Customer-Experience-Intelligence-From-Operational-Analytics-to-Intelligent-Automation/blob/main/dashboard%20preview/Critical%20Alert%20Mail.png?raw=true" width="100%">
+<img src="https://github.com/minhnguyen290304/Customer-Experience-Intelligence-From-Operational-Analytics-to-Intelligent-Automation/blob/main/visuals/Critical%20Alert%20Mail.png?raw=true" width="100%">
 
 Unlike the Morning Brief, the Critical Alert is generated only when predefined operational thresholds are exceeded. The report focuses exclusively on urgent operational risks and includes:
 
