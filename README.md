@@ -249,73 +249,62 @@ Together with the operational dashboards, Customer Voice Analytics provides a mo
 
 ---
 
-# 7. AI CX Operations Automation
+## 7. AI CX Operations Automation
 
-Traditional business intelligence dashboards require managers to actively monitor operational performance and manually interpret analytical results. To reduce manual reporting effort and enable more proactive decision-making, this project extends conventional analytics into an AI-assisted operational monitoring workflow.
+Traditional business intelligence dashboards require managers to actively monitor operational performance and manually interpret analytical results. While dashboards provide valuable visibility into operational KPIs, they still rely on users to regularly access reports and identify emerging issues.
 
-The automation workflow was implemented using n8n, integrating operational KPIs, anomaly detection, customer feedback analysis, and Large Language Models into a unified reporting pipeline capable of automatically generating executive reports each morning.
+To enable a more proactive operational monitoring process, this project extends conventional analytics into an AI-powered reporting workflow. Implemented using **n8n**, the workflow integrates operational KPIs, anomaly detection, customer voice analytics, and the **OpenAI API** to automatically generate executive-ready reports and deliver them directly to stakeholders.
 
-** Workflow Architecture:
+**Workflow Architecture**
 
 <img src="https://github.com/minhnguyen290304/Customer-Experience-Intelligence-From-Operational-Analytics-to-Intelligent-Automation/blob/main/workflows/Automation%20Workflow.png?raw=true" width="100%">
 
-```text
-Schedule Trigger
-        ↓
-Read Ticket
-Read SLA
-Read Feedback
-        ↓
-Merge
-        ↓
-Business Logic
-        ↓
-Daily KPI
-        ↓
-Anomaly Detection
-        ↓
-OpenAI
-        ↓
-Morning Brief
-        ↓
-Critical Alert
-        ↓
-Gmail
-```
+The workflow begins by retrieving operational datasets from Google Sheets, including Ticket records, SLA logs, and Customer Feedback. Ticket and SLA data are merged and processed through a series of business rules to calculate business-hour SLA, generate daily operational KPIs, and detect abnormal operational conditions such as declining SLA compliance, excessive handling delays, overloaded agents, or deteriorating service performance.
 
-The workflow begins by retrieving the latest operational datasets before merging structured ticket information, SLA records, and customer feedback into a unified analytical dataset. Business logic is subsequently applied to calculate Actual SLA, generate operational KPIs, and evaluate service performance for the reporting period.
-
-Anomaly Detection continuously monitors operational indicators to identify abnormal situations such as declining SLA compliance, excessive handling delays, overloaded agents, or deteriorating service performance. These anomalies are then incorporated into AI-generated executive reports together with customer feedback insights.
-
-Finally, OpenAI generates structured HTML reports before automated email delivery distributes both the Morning Brief and Critical Alert reports to management.
-
-
-### Workflow Components
+In parallel, customer feedback is filtered and aggregated before being combined with the operational KPIs. The consolidated analytical results are then transformed into structured prompts and passed to the **OpenAI API**, which generates AI-powered executive reports in HTML format. Finally, the reports are automatically delivered to stakeholders via Gmail, enabling daily operational monitoring without manual report preparation.
 
 | Node | Purpose |
 |------|---------|
-| Schedule Trigger | Execute every morning |
-| Google Sheets | Load operational data |
-| Merge | Combine datasets |
-| Business Logic | Calculate Actual SLA |
-| Daily KPI | Generate KPIs |
-| Anomaly Detection | Detect operational risks |
-| OpenAI | Generate executive reports |
-| Gmail | Deliver reports |
+| Schedule Trigger | Execute the workflow every morning |
+| Google Sheets | Retrieve Ticket, SLA, and Customer Feedback datasets |
+| Merge | Combine operational datasets |
+| Business Logic | Calculate business-hour SLA and operational metrics |
+| Daily KPI | Generate daily operational KPIs |
+| Anomaly Detection | Identify abnormal operational conditions |
+| OpenAI API | Generate AI-powered executive reports |
+| Gmail | Automatically deliver reports to stakeholders |
 
-The workflow automatically produces:
-- AI Morning Brief
-- AI Critical Alert
+### Automated Executive Reports
 
-## Executive Reports
+The workflow automatically generates two AI-powered reports designed for different operational scenarios.
 
-The automation workflow produces two AI-generated executive reports designed for different operational scenarios.
+#### Morning Brief
 
-The **Morning Brief** provides a comprehensive daily operational summary, including Executive Summary, Operational KPI Dashboard, Critical Alerts, Agent Performance, Service Performance, Customer Voice Analytics, and recommended business actions.
+<img src="https://github.com/minhnguyen290304/Customer-Experience-Intelligence-From-Operational-Analytics-to-Intelligent-Automation/blob/main/dashboard%20preview/Morning%20Brief%20Mail.png?raw=true" width="100%">
 
-The **Critical Alert** report is generated whenever operational anomalies exceed predefined thresholds. Instead of presenting routine daily performance, this report focuses exclusively on urgent operational risks, affected business areas, potential business impact, and immediate corrective actions requiring management attention.
+The Morning Brief is generated on a scheduled basis and provides management with a concise overview of daily operational performance. In addition to the executive summary shown above, the complete report includes:
 
-Together, these reports demonstrate how traditional dashboard monitoring can evolve into an AI-assisted decision-support system capable of delivering concise operational intelligence directly to business stakeholders without requiring manual report preparation.
+- Executive Summary
+- Daily KPI Summary
+- Critical Alerts
+- Agent Performance Highlights
+- Agent Performance Highlights
+- Customer Voice Summary
+- Business Recommendation Action Plan
+
+#### Critical Alert
+
+<img src="https://github.com/minhnguyen290304/Customer-Experience-Intelligence-From-Operational-Analytics-to-Intelligent-Automation/blob/main/dashboard%20preview/Critical%20Alert%20Mail.png?raw=true" width="100%">
+
+Unlike the Morning Brief, the Critical Alert is generated only when predefined operational thresholds are exceeded. The report focuses exclusively on urgent operational risks and includes:
+
+- Incident Summary
+- Critical Alerts
+- Affected Agents and Services
+- Recommended Immediate Actions
+- Executive Note
+
+By integrating operational analytics, customer feedback analysis, anomaly detection, workflow automation, and Large Language Models into a single pipeline, the project transforms traditional dashboard-based monitoring into a proactive operational reporting system. Instead of manually reviewing dashboards each day, managers receive concise AI-generated executive reports directly in their inbox, enabling faster operational awareness and more timely decision-making.
 
 ---
 
@@ -369,23 +358,23 @@ Rather than relying solely on periodic dashboard reviews, organizations should i
 
 # 10. Future Enhancements
 
-***Real-Time Operational Monitoring
+### Real-Time Operational Monitoring
 
 Replace scheduled batch processing with real-time data streaming to enable continuous monitoring of operational performance and faster detection of service disruptions.
 
-***Predictive SLA Analytics
+### Predictive SLA Analytics
 
 Develop machine learning models capable of forecasting SLA violations before they occur, allowing managers to proactively allocate resources and reduce potential service delays.
 
-*** Advanced Customer Voice Analytics
+### Advanced Customer Voice Analytics
 
 Enhance the current topic modeling approach with sentiment analysis, aspect-based sentiment analysis, or Retrieval-Augmented Generation (RAG) to generate richer customer insights and more context-aware recommendations.
 
-*** AI Operational Copilot
+### AI Operational Copilot
 
 Extend the existing AI workflow into an interactive operational assistant capable of answering business questions, explaining KPI changes, identifying root causes, and recommending corrective actions through natural language conversations.
 
-*** Enterprise Data Integration
+### Enterprise Data Integration
 
 Integrate the solution with enterprise CRM, Customer Data Platform (CDP), ticketing systems, and data warehouses to support larger-scale deployments and enable organization-wide Customer Experience Intelligence.
 
