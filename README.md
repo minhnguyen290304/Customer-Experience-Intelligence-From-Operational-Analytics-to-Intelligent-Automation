@@ -1,6 +1,6 @@
-# 🎯 Customer Experience Intelligence: From Operational Analytics to Intelligent Automation
+# 🎯 Customer Support Intelligence: From Operational Analytics to Intelligent Automation
 
-> **An end-to-end Customer Experience Intelligence solution that integrates data engineering, operational analytics, customer voice analytics, and AI-powered workflow automation to support proactive operational decision-making.**
+> **An end-to-end Customer Support Intelligence solution that integrates data engineering, operational analytics, customer voice analytics, and AI-powered workflow automation to support proactive operational decision-making.**
 
 ---
 
@@ -9,14 +9,13 @@
 
 ## Project Overview
 
-In today's digital economy, every customer interaction generates valuable operational and behavioral data. Beyond resolving customer requests, modern Customer Experience (CX) teams are responsible for continuously monitoring service quality, measuring operational efficiency, identifying bottlenecks, and understanding customer expectations in order to improve the overall customer journey.
+In today's digital economy, every customer interaction generates valuable operational and behavioral data. Beyond resolving customer requests, modern customer support teams are responsible for continuously monitoring service quality, measuring operational efficiency, identifying operational bottlenecks, and understanding customer concerns to improve service delivery.
 
 As customer volume continues to grow, manually reviewing operational dashboards, service-level metrics, and thousands of customer feedback comments becomes increasingly time-consuming and reactive. Organizations therefore require an integrated analytical solution capable of transforming operational data into timely business insights while reducing manual reporting effort.
 
-This project presents an end-to-end Customer Experience Operations Intelligence solution that combines data engineering, business intelligence, customer voice analytics, and AI-powered workflow automation into a unified analytical pipeline.
+This project presents an end-to-end Customer Support Intelligence solution that combines data engineering, business intelligence, customer voice analytics, and AI-powered workflow automation into a unified analytical pipeline.
 
-Starting from raw customer support data, the project performs data preparation, business-hour SLA calculation, operational KPI generation, interactive dashboard development, customer feedback analysis using Natural Language Processing (NLP), and finally an AI-assisted automation workflow capable of generating executive Morning Brief reports and Critical Alerts for daily operational monitoring.
-
+Starting from raw customer support data, the project performs data preparation, business-hour SLA calculation, operational KPI generation, interactive dashboard development, customer feedback analysis using Natural Language Processing (NLP), and an AI-powered workflow that automatically generates executive Morning Briefs and Critical Alerts for daily operational monitoring.
 
 #### The project consists of 10 main parts:
 
@@ -50,17 +49,17 @@ Starting from raw customer support data, the project performs data preparation, 
 
 # 1. Business Objectives
 
-The primary objective of this project is to develop an integrated Customer Experience Operations Intelligence solution capable of supporting operational decision-making through data-driven analytics and intelligent automation.
+The primary objective of this project is to develop an integrated Customer Support Intelligence solution capable of supporting operational decision-making through data-driven analytics and intelligent automation.
 
 Specifically, the project aims to:
 
 - Build a reliable analytical dataset by integrating customer support ticket records with SLA tracking data.
 - Measure operational performance through business-hour SLA calculations and operational KPIs.
 - Analyze ticket volume, SLA compliance, agent productivity, and service-level performance using interactive dashboards.
-- Discover recurring customer concerns through Customer Voice Analytics using Topic Modeling.
+- Analyze customer feedback using NLP Topic Modeling to identify recurring support issues and customer concerns.
 - Design an AI-powered automation workflow capable of automatically generating executive operational reports and critical incident alerts.
 
-Ultimately, the project demonstrates how organizations can move beyond descriptive reporting by combining operational analytics and artificial intelligence to support faster, re informed managerial decisions.
+Ultimately, the project demonstrates how organizations can move beyond descriptive reporting by combining operational analytics and artificial intelligence to support faster, and more informed operational decision-making.
 
 ---
 
