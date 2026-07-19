@@ -65,11 +65,11 @@ Ultimately, the project demonstrates how organizations can move beyond descripti
 
 # 2. Dataset Overview
 
-The analytical workflow is built upon three operational datasets representing different aspects of Customer Experience operations. Together, these datasets provide both structured operational information and unstructured customer feedback required for comprehensive business analysis.
+The analytical workflow is built upon three operational datasets representing different aspects of Customer Support operations. Together, these datasets provide both structured operational information and unstructured customer feedback required for comprehensive business analysis.
 
 ## Data_Ticket
 
-The `Data_Ticket` dataset records every customer support request submitted to the Customer Experience team. Each record represents a single customer support ticket and contains information about when the ticket was created, which agent handled it, and which product or service category the request belongs to.
+The `Data_Ticket` dataset records every customer support request submitted to the Customer Support team. Each record represents a single customer support ticket and contains information about when the ticket was created, which agent handled it, and which product or service category the request belongs to.
 
 | Column | Description |
 |---------|-------------|
@@ -160,7 +160,7 @@ Customer Insights               Operational Insights
 
 The operational analytics layer transforms processed Ticket and SLA data into interactive Power BI dashboards that provide a comprehensive view of customer support performance. Rather than presenting isolated KPIs, the dashboards help managers monitor operational workload, SLA compliance, agent productivity, and service-level performance, enabling faster identification of operational bottlenecks and improvement opportunities.
 
-The analytical solution consists of three dashboard pages, each focusing on a different operational perspective while collectively providing a complete view of Customer Experience operations.
+The analytical solution consists of three dashboard pages, each focusing on a different operational perspective while collectively providing a complete view of Customer Support operations.
 
 ## 5.1. CX Operations Overview
 
@@ -326,7 +326,7 @@ Service-level analysis shows that poor SLA performance is not evenly distributed
 
 ### Insight 4: Customer Feedback Complements Operational Metrics
 
-Operational dashboards explain how Customer Experience teams perform, while customer feedback explains why customers remain satisfied or dissatisfied. Topic Modeling identifies recurring concerns related to loan services, promotions, payments, account management, and application usability. Integrating these qualitative insights with operational KPIs provides a more complete understanding of customer experience and helps prioritize improvement initiatives.
+Operational dashboards explain how Customer Support teams perform, while customer feedback explains why customers remain satisfied or dissatisfied. Topic Modeling identifies recurring concerns related to loan services, promotions, payments, account management, and application usability. Integrating these qualitative insights with operational KPIs provides a more complete understanding of customer experience and helps prioritize improvement initiatives.
 
 ### Insight 5: AI Enables Proactive Operational Decision-Making
 
@@ -350,11 +350,11 @@ Customer feedback should become a regular component of operational performance e
 
 ### Recommendation 4: Expand Intelligent Automation
 
-The AI-powered workflow demonstrates that executive reporting can be generated automatically with minimal manual effort. Organizations should further extend intelligent automation into areas such as root cause analysis, predictive SLA monitoring, knowledge management, and operational decision support to enhance overall Customer Experience management.
+The AI-powered workflow demonstrates that executive reporting can be generated automatically with minimal manual effort. Organizations should further extend intelligent automation into areas such as root cause analysis, predictive SLA monitoring, knowledge management, and operational decision support to enhance overall Customer Support management.
 
 ### Recommendation 5: Establish a Data-Driven CX Management Framework
 
-Rather than relying solely on periodic dashboard reviews, organizations should integrate data engineering, operational analytics, customer feedback, and AI-assisted reporting into a unified Customer Experience Intelligence framework. This approach enables continuous monitoring, faster response to operational risks, and more informed strategic decision-making.
+Rather than relying solely on periodic dashboard reviews, organizations should integrate data engineering, operational analytics, customer feedback, and AI-assisted reporting into a unified Customer Support Intelligence framework. This approach enables continuous monitoring, faster response to operational risks, and more informed strategic decision-making.
 
 ---
 
@@ -378,7 +378,7 @@ Extend the existing AI workflow into an interactive operational assistant capabl
 
 ### Enterprise Data Integration
 
-Integrate the solution with enterprise CRM, Customer Data Platform (CDP), ticketing systems, and data warehouses to support larger-scale deployments and enable organization-wide Customer Experience Intelligence.
+Integrate the solution with enterprise CRM, Customer Data Platform (CDP), ticketing systems, and data warehouses to support larger-scale deployments and enable organization-wide Customer Support Intelligence.
 
 
 ---
