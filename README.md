@@ -340,7 +340,7 @@ Traditional dashboards require managers to manually review operational metrics b
 
 Implement workload balancing mechanisms that distribute tickets more evenly according to agent capacity, expertise, and historical performance. A more balanced allocation strategy can reduce operational bottlenecks while improving SLA compliance and overall service quality.
 
-### ecommendation 2: Prioritize High-Impact Service Categories
+### Recommendation 2: Prioritize High-Impact Service Categories
 
 Rather than allocating resources equally across all services, management should focus improvement efforts on service categories that combine high ticket volume with consistently poor SLA performance. Targeted optimization is likely to generate greater operational benefits while making more efficient use of available resources.
 
