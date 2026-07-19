@@ -234,10 +234,13 @@ The six identified customer discussion themes are presented below.
 | 5 | Payment & Bank Integration Experience | ví, chuyển, ngân_hàng, liên_kết, thông_báo | 14.6% | Users seek a more seamless payment experience with reliable bank integration and transaction notifications. |
 | 6 | App UI/UX & Feature Enhancement | app, giao_diện, dark_mode, lag, tính_năng | 7.9% | Customers request interface improvements, better performance, and enhanced application usability. |
 
-
+###
 
 <img src="https://github.com/minhnguyen290304/Customer-Experience-Intelligence-From-Operational-Analytics-to-Intelligent-Automation/blob/main/dashboard%20preview/TopicDistribution.png?raw=true" width="100%">
 
+###
+
+<img src="https://github.com/minhnguyen290304/Customer-Experience-Intelligence-From-Operational-Analytics-to-Intelligent-Automation/blob/main/dashboard%20preview/Word%20Cloud.png?raw=true" width="100%">
 
 
 The topic modeling results reveal that customer feedback extends far beyond issue resolution. **Rewards & Gamification (21.1%)** and **Loan & Credit Services (20.3%)** together account for over **41%** of all suggestions, indicating strong customer demand for continuous product innovation and service enhancement.
