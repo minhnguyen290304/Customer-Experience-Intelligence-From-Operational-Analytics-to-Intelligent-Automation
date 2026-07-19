@@ -1,4 +1,4 @@
-# 📊 Customer Experience Intelligence: From Operational Analytics to Intelligent Automation
+# 🎯 Customer Experience Intelligence: From Operational Analytics to Intelligent Automation
 
 > **An end-to-end Customer Experience Intelligence solution that integrates data engineering, operational analytics, customer voice analytics, and AI-powered workflow automation to support proactive operational decision-making.**
 
