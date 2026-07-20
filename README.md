@@ -65,7 +65,7 @@ Ultimately, the project demonstrates how organizations can move beyond descripti
 
 # 2. Dataset Overview
 
-The analytical workflow is built upon three operational datasets representing different aspects of Customer Support operations. Together, these datasets provide both structured operational information and unstructured customer feedback required for comprehensive business analysis.
+The analytical workflow is built upon three operational datasets representing different aspects of customer support operations in a **fintech business**. Together, these datasets provide both structured operational information and unstructured customer feedback required for comprehensive business analysis.
 
 ## Data_Ticket
 
