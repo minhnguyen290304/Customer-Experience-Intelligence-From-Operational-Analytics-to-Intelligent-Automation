@@ -17,7 +17,7 @@ This project presents an end-to-end Customer Support Intelligence solution that 
 
 Starting from raw customer support data, the project performs data preparation, business-hour SLA calculation, operational KPI generation, interactive dashboard development, customer feedback analysis using Natural Language Processing (NLP), and an AI-powered workflow that automatically generates executive Morning Briefs and Critical Alerts for daily operational monitoring.
 
-#### The project consists of 10 main parts:
+#### The project consists of 9 main parts:
 
 ```text
 1. Business Objectives
@@ -26,23 +26,21 @@ Starting from raw customer support data, the project performs data preparation, 
 
 3. Project Architecture
 
-4. Data Engineering
+4. Operational Performance Analytics
 
-5. Operational Performance Analytics
+      4.1. CX Operations Overview
+      4.2. Agent Performance Analysis
+      4.3. Service Performance Analysis
 
-      5.1. CX Operations Overview
-      5.2. Agent Performance Analysis
-      5.3. Service Performance Analysis
+5. Customer Voice Analytics
 
-6. Customer Voice Analytics
+6. AI CX Operations Automation
 
-7. AI CX Operations Automation
+7. Key Business Insights
 
-8. Key Business Insights
+8. Business Recommendations
 
-9. Business Recommendations
-
-10. Future Enhancements
+9. Future Enhancements
 ```
 
 ---
@@ -156,13 +154,13 @@ Customer Insights               Operational Insights
 ---
 
 
-# 5. Operational Performance Analytics
+# 4. Operational Performance Analytics
 
 The operational analytics layer transforms processed Ticket and SLA data into interactive Power BI dashboards that provide a comprehensive view of customer support performance. Rather than presenting isolated KPIs, the dashboards help managers monitor operational workload, SLA compliance, agent productivity, and service-level performance, enabling faster identification of operational bottlenecks and improvement opportunities.
 
 The analytical solution consists of three dashboard pages, each focusing on a different operational perspective while collectively providing a complete view of Customer Support operations.
 
-## 5.1. CX Operations Overview
+## 4.1. CX Operations Overview
 
 <img src="https://github.com/minhnguyen290304/Customer-Experience-Intelligence-From-Operational-Analytics-to-Intelligent-Automation/blob/main/dashboard%20preview/Ticket%20and%20SLA%20Performance%20Overview.png?raw=true" width="100%">
 
@@ -174,7 +172,7 @@ Although ticket volume increased steadily toward the end of the reporting period
 
 The distribution of Actual SLA is highly skewed. While most tickets were resolved within a relatively short timeframe, a small number of exceptionally long-running cases significantly increased the average handling time, indicating potential backlog accumulation, ticket escalation, or process bottlenecks requiring further operational investigation.
 
-## 5.2. Agent Performance Analysis
+## 4.2. Agent Performance Analysis
 
 <img src="https://github.com/minhnguyen290304/Customer-Experience-Intelligence-From-Operational-Analytics-to-Intelligent-Automation/blob/main/dashboard%20preview/Agent%20Performance.png?raw=true" width="100%">
 
@@ -188,7 +186,7 @@ Interestingly, workload alone does not fully explain operational performance. De
 
 Several agents also recorded exceptionally high average Actual SLA values exceeding **15,000 minutes**, indicating potential backlog accumulation, complex cases, or operational inefficiencies that warrant further investigation.
 
-## 5.3. Service Performance Analysis
+## 4.3. Service Performance Analysis
 
 <img src="https://github.com/minhnguyen290304/Customer-Experience-Intelligence-From-Operational-Analytics-to-Intelligent-Automation/blob/main/dashboard%20preview/Product%20Service%20Analysis.png?raw=true" width="100%">
 
@@ -206,7 +204,7 @@ Finally, the Service × Week performance matrix reveals that SLA compliance fluc
 
 ---
 
-# 6. Customer Voice Analytics
+# 5. Customer Voice Analytics
 
 While operational dashboards reveal **how** customer support performs, they cannot fully explain **why** customers remain satisfied or dissatisfied. To complement structured operational metrics, this project incorporates Customer Voice Analytics to analyze unstructured customer feedback and uncover recurring customer concerns at scale.
 
@@ -251,7 +249,7 @@ Together with the operational dashboards, Customer Voice Analytics provides a mo
 
 ---
 
-## 7. AI CX Operations Automation
+## 6. AI CX Operations Automation
 
 Traditional business intelligence dashboards require managers to actively monitor operational performance and manually interpret analytical results. While dashboards provide valuable visibility into operational KPIs, they still rely on users to regularly access reports and identify emerging issues.
 
@@ -310,7 +308,7 @@ By integrating operational analytics, customer feedback analysis, anomaly detect
 
 ---
 
-# 8. Key Business Insights
+# 7. Key Business Insights
 
 ### Insight 1: Growing Workload Is Putting Pressure on Service Performance
 
@@ -334,7 +332,7 @@ Traditional dashboards require managers to manually review operational metrics b
 
 ---
 
-# 9. Business Recommendations
+# 8. Business Recommendations
 
 ### Recommendation 1: Improve Workload Allocation Across Support Agents
 
@@ -358,7 +356,7 @@ Rather than relying solely on periodic dashboard reviews, organizations should i
 
 ---
 
-# 10. Future Enhancements
+# 9. Future Enhancements
 
 ### Real-Time Operational Monitoring
 
