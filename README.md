@@ -15,7 +15,7 @@ As customer volume continues to grow, manually reviewing operational dashboards,
 
 This project presents an end-to-end Customer Support Intelligence solution that combines data engineering, business intelligence, customer voice analytics, and AI-powered workflow automation into a unified analytical pipeline.
 
-Starting from raw customer support data, the project performs data preparation, business-hour SLA calculation, operational KPI generation, interactive dashboard development, customer feedback analysis using Natural Language Processing (NLP), and an AI-powered workflow that automatically generates executive Morning Briefs and Critical Alerts for daily operational monitoring.
+Starting from raw customer support data, the project performs data preparation, business-hour SLA calculation, operational KPI generation using MS SQL Server, interactive dashboard development using Power BI, customer feedback analysis using Natural Language Processing (NLP), and an AI-powered workflow using n8n that automatically generates executive Morning Briefs and Critical Alerts for daily operational monitoring.
 
 #### The project consists of 9 main parts:
 
